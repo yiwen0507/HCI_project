@@ -1,0 +1,219 @@
+body {
+  text-align: center;
+  font-size: 1em;
+  font-family: Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #E9E9FD  ;
+  margin-top: 0px;
+  top: -100px;
+  /* margin-bottom: 100px; */
+}
+
+/* button */
+/* #lang_button .knobs:before,
+#lang_button .knobs:after,
+#lang_button .knobs span {
+  position: absolute;
+  top: 4px;
+  width: 20px;
+  height: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1; */
+  /* padding: 9px 4px;
+  border-radius: 2px;
+  transition: 0.3s ease all;
+}
+
+#lang_button .knobs:before {
+  content: "";
+  left: 4px;
+  background-color: #03a9f4;
+}
+
+#lang_button .knobs:after {
+  content: "ENG";
+  right: 4px;
+  color: #4e4e4e;
+}
+
+#lang_button .knobs span {
+  display: inline-block;
+  left: 4px;
+  color: #fff;
+  z-index: 1;
+}
+
+
+#lang_button .checkbox:checked + .knobs span {
+  color: #4e4e4e;
+}
+
+#lang_button .checkbox:checked + .knobs:before {
+  left: 42px;
+  background-color: #f44336;
+}
+
+#lang_button .checkbox:checked + .knobs:after {
+  color: #fff;
+}
+
+#lang_button .checkbox:checked ~ .layer {
+  background-color: #fcebeb;
+} 
+*/
+
+/* ------------- search container -------------*/
+.main {
+  width: 80%;
+  margin: auto;
+  /* height: 1000px; */
+  /* transform: translate(11%, 0); */
+  /* position: absolute; */
+  font-size: 20px;
+}
+
+.main .search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  height: 60px;
+  /* box-shadow: 3px 3px 5px rgb(206, 206, 206); */
+  /* width: 80%; */
+  /* border: 1px solid #1B1C1C; */
+  /* border-radius: 10px; */
+}
+
+.main .search-container input[type=text] {
+  width: 95%;
+  height: 95%;
+  font-size: 17px;
+  border: none;
+  background-color: none;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(87, 87, 86, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.main .search-container input[type=text]:focus {
+  outline: none;
+}
+
+.main .search-container button {
+  font-size: 17px;
+  height: 100%;
+  width: 5%;
+  border: none;
+  background: white;
+  cursor: pointer;
+}
+
+.main .search-container .searchButton {
+  border-radius: 20px 0 0 20px;
+}
+
+.main .search-container .editButton {
+  border-radius:  0 20px 20px 0;
+}
+
+.main .search-container button:hover {
+  background: #ccc;
+}
+
+/* ------------- all reviews heading ------------- */
+.main .all-review{
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.main .all-review .title{
+  text-align: left;
+  flex: 15%;
+  /* font-size: 1.2em; */
+}
+
+.main .all-review .option{
+  text-align: center;
+  flex: 80%;
+}
+
+.main .all-course{
+  overflow-y: auto;
+  height: auto;
+  overflow: auto;
+}
+
+/* ------------- all reviews content ------------- */
+
+.main .course{
+  margin-top: 5px;
+  display: flex;
+  text-align: left;
+  border-radius: 30px;
+  background-color: #fff ;
+  /* border: 15px solid green; */
+  padding: 20px;
+  /* padding-top:5px; */
+  margin: 20px 8px;
+  box-shadow: 3px 3px 5px rgb(206, 206, 206);
+}
+
+.main .left{
+  text-align: left;
+  flex:50%;
+}
+
+.main .left p{
+  font-size: 1.2em;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.main .right{
+  text-align: right;
+  flex:50%;
+}
+
+.checked {
+  color: orange;
+}
+
+p.profname{
+  font-size: 0.7em !important;
+  margin-bottom: 10px;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+/* 
+.footnote {
+  width: 100%;
+  height: 80px;
+  border-radius: 40px 40px 0 0;
+  /* overflow: hidden; 
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-size: 0.7em;
+  margin-top: 40px;
+  box-shadow: 3px 3px 5px rgb(206, 206, 206);
+} */

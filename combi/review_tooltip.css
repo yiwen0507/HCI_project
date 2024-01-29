@@ -1,0 +1,107 @@
+
+.tooltip {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: translate(-50%, 0);
+    font-size: 1.2em;
+    opacity: 0;
+    padding: 20px;
+    font-weight: bold;
+      color: #000;
+    z-index: 999;
+    /* background-color: rgba(85, 85, 85, 0.9); */
+    background-color: #fff;
+    border: 2px solid #0033a0;
+    border-radius: 30px;
+    
+}
+  
+.tooltip .button-container{
+    display: flex;
+    font-size: 1em;
+    align-self: flex-end;
+}
+  
+.tooltip .button-container #exit-tooltip{
+    cursor: pointer;
+    color: red;
+    margin-left: 10px;
+}
+  
+.tooltip .button-container #submit-tooltip{
+    cursor: pointer;
+    color: red;
+    margin-left: 10px;
+}
+  
+.tooltip .review-container{
+    display: flex;
+    flex-direction: row !important;
+    height: 100%;
+}
+  
+.tooltip .review-container .left{
+    text-align: left;
+    flex: 75%;
+    margin-left:15px;
+    /* font-weight: normal; */
+}
+  
+.tooltip .review-container .right{
+    flex: 20%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+    justify-content: right;
+}
+  
+.tooltip .review-container .right .button-container{
+    flex: 10%;
+}
+  
+.tooltip .review-container .right .star-container{
+    flex: 90%;
+    text-align: right;
+}
+  
+.tooltip .review-container .right span{
+    cursor: pointer;
+}
+  
+.tooltip textarea{
+    resize: none;
+    transform: translate(0, 5px);
+}
+  
+.tooltip .left p.reviewarea{
+    font-weight: normal;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+  
+.tooltip .left p.prof_rb{
+    font-weight: normal;
+    font-size: 0.7em;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+  
+.tooltip .text-box{
+    width: 100%;
+    height: 65%;
+    resize: none;
+    font-size: 0.8em;
+    font-family: Verdana, sans-serif;
+    white-space: pre-line;
+}
+  
+.tooltip #submit{
+    cursor: pointer;
+    height: 10px;
+    padding: 2px 15px 5px 15px;
+    border-radius: 12px;
+    border: 2px solid #0033a0;
+    /* margin-top: 100px;
+    margin-bot */
+}

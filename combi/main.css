@@ -1,0 +1,409 @@
+/* topnav */
+/* .topnav {
+    background-color: #000000;
+    overflow: hidden;
+    width: 80%;
+    align-self: center;
+    margin: auto;
+}
+.topnav a {
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    align-items: center;
+}
+.topnav a:hover {
+    background-color:#dddddd;
+    color: #000000;
+}
+.topnav a:active {
+    background-color: #3439db;
+    color: #FFFFFF;
+}
+.topnav a.split {
+    float: right;
+    color: #ffffff;
+    text-align: center;
+    padding: 28px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.topnav a.split:hover {
+    background-color:#dddddd;
+    color: #000000;
+}
+.topnav a.split:active {
+    background-color: #3439db;
+    color: #FFFFFF;
+} */
+
+body {
+    text-align: center;
+    font-size: 1em;
+    font-family: Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E9E9FD;
+    margin-top: 0px;
+    top: -100px;
+    /* margin-bottom: 100px; */
+}
+
+/* table */
+.courseTable {
+    width: 100%;
+    height: 80vh;
+    align-self: center;
+    /*overflow-x: auto;*/
+    /*margin: 0 -3rem -5rem 0;*/
+}
+
+.courseTable h4{
+    align-items: center;
+    margin-left: 45%;
+    width: 10%;
+    border: 2px solid #0033a0;
+    border-radius: 15px;
+    padding: 10px 10px;
+    margin-bottom: 10px;  
+    background-color: white;  
+}
+
+#semester_table {
+    color: #000000;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    background-color: whitesmoke;
+    margin: 0 auto 3em;
+    align-self: center;
+}
+
+#semester_table th{
+    background-color: white;
+    /* border-radius: 29px; */
+}
+
+#semester_table th, td {
+    padding: 15px;
+    width: 130px;
+    text-align: center;
+    border-bottom: 1px solid #0033a0;
+
+}
+
+.checked {
+    color: orange;
+  }
+
+/* ------------------- ui buttons -------------- */
+
+.uibtn {
+    /* color: universally */
+    background-color: #3439db;
+    color: white;
+    /* alignment */
+    text-align: center;
+    align-self: center;
+    align-items: center;
+    /* font */
+    text-decoration: none;
+    font-size: 1rem;
+    /* size and bound */
+    display: flex;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+}
+.uibtn:hover {
+    font-weight: bold;
+    background-color: white;
+    color: #3439db;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ----- layout -----*/
+
+/* .layoutswitch{
+    margin-left: 70%;
+} */
+
+/* grid/list buttons */
+.layoutbtn {
+    font-size: 0.9em;
+    display: inline-block;
+    flex-direction: row;
+    /* position: absolute; */
+    /* margin-left: 20%; */
+    /* text-align: right; */
+    /* background-color: ; */
+}
+
+.gridlayoutbtn{
+    padding: 12px 8px 12px 12px!important;
+    border-radius: 30px 0 0 30px;
+}
+
+.listlayoutbtn{
+    padding: 12px 12px 12px 8px!important;
+    border-radius: 0 30px 30px 0;
+}
+
+/* grid and list layouts */
+.layoutContainer {
+    width: 80%;
+    margin: auto;
+    gap: 1em;
+}
+
+/* dropdown div, dropbtn button, dropdown-content div */
+.dropdown {
+    max-width: 20%;
+    margin: 2rem 0 0;
+    margin-left: 40%;
+    position: relative;
+    width: 100%;
+}
+
+.dropbtn {
+    text-align: left;
+    padding: 0.5em 0.5em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* border-radius: 25px; */
+}
+
+.arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #F0F0F0;
+    transition: transform ease-in-out 0.3s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    /* align-self: center; */
+    min-width: 160px;
+    box-shadow: 0px 0.5em 1em 0px rgba(0,0,0,0.2);
+    top: 2.5em;
+    width: 100%;
+}
+
+.dropdown-content input {
+    padding: 0.5em 0.3em;
+    display: block;
+    width: 100%;
+    border-width: 0.1em;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+
+.dropdown-content input:active {
+    background-color: #D0D0D0;
+    color: #3439db;
+}
+
+.show {
+    display: block;
+}
+
+/* ------------------- below is for grid ---------------------- */
+
+/* left block */
+#courseListContainer {
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 0 10px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    width: 25em;
+    height: 80vh; /* 100% 視窗高度 */
+    border: 1px solid #ccc; /* 用邊框標識元素的範圍 */
+    overflow-y: auto; /* 啟用垂直滾動 */
+    background-color: #cdcdcd;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+.courseList {
+    overflow: hidden; /* 避免浮動元素導致父元素塌陷 */
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+}
+
+.courseData {
+    overflow: hidden; /* 避免浮動元素導致父元素塌陷 */
+    list-style-type: none;
+    padding: 0;
+    margin: 0rem 0 1rem;
+    display: block;
+    position: relative;
+    flex-direction: column;
+    /* float: left; */ /* 這會使部分電腦出現壓扁的狀況 */
+    /* gap: 0.5rem; */ /* 這個在block的設定下不會作用 */
+    z-index: 1;
+}
+
+.courseList__item {
+    overflow: hidden; /* 避免浮動元素導致父元素塌陷 */
+    padding: 1rem 0.5rem;
+    background-color: white;
+    border-radius: 0.3rem;
+}
+
+.plusButton {
+    float: right; /* 右浮動 */
+}
+
+.courseList__author {
+    color: gray;
+}
+
+/* right block */
+#classScheduleContainer {
+    text-align: center;
+    flex: 1;
+}
+
+#scheduleTable {
+    width: 100%;
+    height: 80vh; /* 100% 視窗高度 */
+    border-collapse: collapse;
+    background-color: whitesmoke;
+}
+
+#scheduleTable td {
+    width: 50px;
+    height: 30px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.infoModal {
+    font-size: 1em;
+    padding: 20px;
+    width: 800px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #0033a0;
+    border-radius: 30px
+}
+
+.courseList__item {
+    text-align: left;
+}
+/*置左*/
+.courseList__item button {
+    display: block; /* 使元素堆疊在一列，而不是在同一行 */
+}
+
+/* ------------- search container -------------*/ 
+/* this is in gridView, course search */
+.search-container {
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    /*align-items: left;*/
+    /* justify-content: top; */
+    /* float: left; */
+    margin-top: 1em;
+    margin-bottom: 1em;
+    /* border-bottom: 1px dashed black; */ /* 無法呈現於外部區塊(marginal)*/
+    height: 45%;
+    width: 96%;
+    position: relative;
+    z-index: 10;
+    /* box-shadow: 3px 3px 5px rgb(206, 206, 206);*/
+    /* width: 80%; */
+    /* border: 1px solid #1B1C1C; */
+    /* border-radius: 10px; */
+}
+.search-container input[type=text] {
+    width: 85%;
+    height: 100%;
+    font-size: 17px;
+    border: none;
+    border-left: 1px dotted grey;
+    border-right: 1px dotted grey;
+    padding: 2px 5px;
+    background-color: none;
+    outline: none;
+}
+
+/* button display setting */
+.search-container .buttonType {
+    font-size: 17px;
+    height: 100%;
+    width: 8%;
+    border: none;
+    background: white;
+    cursor: pointer;
+}  
+.search-container .buttonType:hover {
+    background: #ccc;
+}
+/* smooth angle display */
+.search-container .searchButton {
+    border-radius: 12px 0 0 12px;
+}
+.search-container .filterButton {
+    border-radius: 0 12px 12px 0;
+}
+
+/* filter menu */
+.search-container .filterMenu{
+    display: none;
+    /*visibility: hidden;*/
+    cursor: pointer;
+    width: 100%;
+    height: 5rem;
+    offset: 10rem 0;
+    /*white-space: pre-line;*/
+    margin: 0;
+    text-align: center;
+    float: right;
+    border-radius: 0 0 15px 15px;
+    /*bottom: 0;*/
+    padding: 5px 0px 0px;
+    position: absolute;
+    z-index: 100;
+    top: 55%;
+    /* left: -3rem;*/
+    background-color: #aaaaaa;
+    color: #000;
+    font-size: 0.5em;
+    /*columns: 2;*/
+    /*overflow: hidden;*/
+}
+/* animation on clicking */
+.search-container .filterMenu .show{
+    visibility: visible;
+    display: block;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+.search-container .filterMenu::after{
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #fffbfbe6 transparent ;
+    z-index: 100;
+}

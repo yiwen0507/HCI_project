@@ -1,0 +1,166 @@
+body {
+    text-align: center;
+    font-size: 1em;
+    font-family: Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E9E9FD;
+    margin-top: 0px;
+    top: -100px;
+    /* margin-bottom: 100px; */
+}
+/* ------------- navigation bar ------------- */
+.navbar {
+    width: 80%;
+    height: 120%;
+    border-radius: 0 0 40px 40px;
+    /* overflow: hidden; */
+    color: #949A9B;
+    background-color: #fff;
+    font-size: 1em;
+    box-shadow: 3px 3px 5px rgb(206, 206, 206);
+}
+  
+.navbar a {
+    padding: 10px;
+    
+    font-size: 1.3em;
+    text-decoration: none;  
+    font-size: 18px;
+    display: inline-block;
+    color: #666666;
+}
+  
+.navbar a:hover {
+    background-color: #ccc;
+    color: #333333;
+}
+  
+.navbar a.logo {
+    top: 50px;
+    left: -15px;
+    vertical-align: top;
+    transform: translate(25%, -50%);
+    position: relative;
+    float: left;
+    border-radius: 2em;
+    /* background-color: #D8D8D8; */
+}
+  
+/* navbar .kanan p.vl {
+    border-left: 2px solid black;
+    height: 20px;
+} */
+  
+.navbar .kanan {
+    float: right;
+    display: flex;
+    margin-right: 2%;
+    position: relative;
+    /* position: absolute; */
+    margin-top: 0%;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    text-decoration: none;  
+}
+  
+.navbar .kanan a{
+    border-radius: 15px;
+    padding: 13px;
+    margin: 10px;
+  
+    font-size: 1em;
+    transform: translate(0, 40%);
+    background: #fff;
+    /* background: rgba(255, 251, 251, .5); */
+}
+  
+img{
+    max-width: 100%;
+    /* width:25%; */
+    height:80px;
+    object-fit: cover;
+}
+  
+.navbar .kanan .popup{
+    border-radius: 15px;
+    padding: 12px;
+    margin: 5px;
+    cursor: pointer;
+    transform: translate(0, 50%);
+    background: #fff;
+    height: 30px;
+    color: #666666;
+}
+  
+.navbar .kanan .popup:hover{
+    background-color: #ccc; 
+    color: #3F4040;
+}
+.navbar .kanan a:hover{
+    background-color: #ccc;
+    color: #3F4040;
+}
+  
+/* The actual popup  */
+.navbar .kanan .popup .popuptext {
+    visibility: hidden;
+    cursor: pointer;
+    width: 400px;
+    height: 170px;
+    offset: -20px 0px;
+    white-space: pre-line;
+    background: #f1f1f1;
+    color: #000;
+    text-align: left;
+    border-radius: 25px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1; 
+    top: 125%;
+    left: -100%;
+    margin-left: -80px;
+    columns: 2;
+    font-size: 0.5em;
+}
+  
+  /* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: -2.5%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #fffbfbe6 transparent ;
+    z-index: 10;
+}
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+.navbar .kanan .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+    .navi-text{
+        font-size: 0;
+    }
+}
+@media screen and (min-width: 500px) {
+    .navbar a {
+      float: right;
+    }
+    .navi-text{
+        font-size: 1em;
+    }
+}

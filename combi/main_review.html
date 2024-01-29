@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head class="page.review">
+        <meta charset="utf-8">
+        <title>NYCU評分系統</title>
+
+        <!-- CSS DATA -->
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="navbar.css">
+        <link rel="stylesheet" href="review_tooltip.css">
+
+        <!-- network packages -->
+        <script src="https://unpkg.com/d3@7.8.5/dist/d3.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="navbar"> 
+            <a href="https://www.nycu.edu.tw/" class="logo"><img src="nycu_logo2.png" alt="NYCU logo"></a>  
+                        
+            <div class="kanan">
+                <a href="main.html"><i class="fa fa-fw fa-home"></i> <span class="navi-text">選課首頁</span></a>
+                <div class="popup" onclick="popCodes()"><i class="fa fa-info"></i> <span class="navi-text">編號</span>
+                    <span class="popuptext" id="codePopList" name="popLocation"></span>
+                </div>
+                <a href="https://portal.nycu.edu.tw/" class="user"><i class="fa fa-fw fa-user"></i> 109550200</a>
+            </div>
+        </div>
+
+    <div class="tooltip">
+        <div class="review-container"></div>
+    </div>
+
+    <div class="main">
+
+        <!--<form search-container class="search-container"
+        onsubmit="searchClick()">-->
+        <form search-container class="search-container">
+            <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
+            <input type="text" name="search" placeholder="尋找課程">
+            <button class="editButton"id="edit"><i class="fa fa-pencil"></i></button>
+        </form>
+
+        <div class="all-review">
+            <p class="title"><b>全部評論</b></p>
+            <p class="option">
+                <a href="#" id="quanbu">全部</a>
+                |
+                <a href="#" id="wode">我的</a>
+            </p>
+            <p class="title"></p>
+        </div>
+
+        <div class="all-course">
+    </div>
+
+    <!-- <div class="footnote">
+      <p>© HCI Group 15 2023</p>
+    </div> -->
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="_tools.js"></script>
+    <script src="main_review.js"></script>
+</html>

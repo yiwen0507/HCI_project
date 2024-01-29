@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head class="page.course">
+        <title>NYCU 預排課系統</title>
+        <meta charset="utf-8">
+
+        <!-- CSS DATA -->
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="navbar.css">
+        <link rel="stylesheet" href="review_tooltip.css">
+
+        <!-- network packages -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> <!-- ajax jquery script -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> bootstrap css -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> bootstrap script -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    </head>
+    <body>
+        
+        <div class="bar-init" onload="return navbarInit('course')"></div>
+
+        <div class="navbar"> 
+            <a href="https://www.nycu.edu.tw/" class="logo"><img src="nycu_logo2.png" alt="NYCU logo"></a>  
+                        
+            <div class="kanan">
+                <a href="main_review.html"><i class="fa fa-fw fa-home"></i> <span class="navi-text">評論首頁</span></a>
+                <div class="popup" onclick="popCodes()"><i class="fa fa-info"></i> <span class="navi-text">編號</span>
+                    <span class="popuptext" id="codePopList" name="popLocation"></span>
+                </div>
+                <a href="https://portal.nycu.edu.tw/" class="user"><i class="fa fa-fw fa-user"></i> 109550200</a>
+            </div>
+        </div>
+
+        <div class="tooltip">
+            <div class="review-container"></div>
+        </div>
+
+        <br>
+
+        <!-- grid list layout switch -->
+        <div class="layoutswitch" style="float: right;">
+            <button onclick="showVerticalMode()"class="gridlayoutbtn uibtn layoutbtn" id="gridlayoutbtn">Grid</button>
+            <button onclick="showHorizontalMode()"class="listlayoutbtn uibtn layoutbtn" id="listlayoutbtn">List</button>
+        </div>
+
+        <!-- List 模式 -->
+        <div id="listContainer" class="layoutContainer">
+            <!-- List 模式的內容放在這裡 -->
+            <!-- choose semester dropdown menu -->
+            <div class="dropdown">
+                <button onclick="coursedd()" class="dropbtn uibtn" id="dropbtn">
+                    <span id="dropbtnname" value="學年度 學期">學年度 學期</span>
+                    <span class="arrow"></span>
+                </button>
+                <div id="semesterdropdown" class="dropdown-content">
+                    <!-- <input type="button" value="108學年度 第1學期" class="btn btn-info" onclick="ShowSemesterDiv(this)"/> -->
+                    <!-- <input type="button" value="108學年度 第2學期" class="btn btn-info" onclick="ShowSemesterDiv(this)"/>
+                    <input type="button" value="109學年度 第1學期" class="btn btn-info" onclick="ShowSemesterDiv(this)"/>
+                    <input type="button" value="109學年度 第2學期" class="btn btn-info" onclick="ShowSemesterDiv(this)"/>
+                    <input type="button" value="109學年度 暑期" class="btn btn-info" onclick="ShowSemesterDiv(this)"/>
+                    <input type="button" value="110學年度 第1學期" class="btn btn-info" onclick="ShowSemesterDiv(this)"/>
+                    <input type="button" value="110學年度 第2學期" class="btn btn-info" onclick="ShowSemesterDiv(this)"/>
+                    <input type="button" value="111學年度 第1學期" class="btn btn-info" onclick="ShowSemesterDiv(this)"/>
+                    <input type="button" value="111學年度 第2學期" class="btn btn-info" onclick="ShowSemesterDiv(this)"/>
+                    <input type="button" value="112學年度 第1學期" class="btn btn-info" onclick="ShowSemesterDiv(this)"/> -->
+                </div>
+            </div>
+            <div class="courseTable"></div>
+        </div>
+        
+        <!-- Grid 模式 -->
+        <br>
+        <div id="gridContainer" class="layoutContainer">
+            <!-- Grid 模式的內容放在這裡 -->
+            <!-- 搜尋表單 <button type="submit">目前已選</button> -->
+            <!--<form data-bookfinder-form>
+                <div>
+                    <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
+                    <input name="search" type="text" placeholder="請輸入課名或教授……" />
+                </div>
+            </form>-->
+            <!--search -->
+            <div id="courseListContainer" class="gridElement">
+                <div>
+                    <!--<form search-container class="search-container"
+                    onsubmit="return searchClick()">-->
+                    <form search-container class="search-container">
+                        <button class="searchButton buttonType" type="submit"><i class="fa fa-search"></i></button>
+                        <input type="text" name="search" placeholder="請輸入課名或教授……">
+                        <div class="filterButton buttonType" onclick="popFilter()"><i class="fa fa-filter"></i>
+                            <div class="filterMenu"></div> <!--onclick="popFilter()"-->
+                        </div>
+                    </form>
+                </div>
+                <div class="courseList">
+                    <ul class="courseData" data-list></ul>
+                </div>
+            </div>
+                    
+
+            <!-- 課表 -->
+            <div id="classScheduleContainer" class="gridElement">
+                <table id="scheduleTable" border="2">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>MON</th>
+                            <th>TUE</th>
+                            <th>WED</th>
+                            <th>THU</th>
+                            <th>FRI</th>
+                            <th>SAT</th>
+                            <th>SUN</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleBody">
+                        <!-- 課表內容將在這裡動態生成 -->
+                    </tbody>
+                </table>   
+            </div>
+        </div>    
+
+        
+    </body>
+    <script src="_tools.js"></script>
+    <script src="main.js"></script>
+    <script src="grid.js"></script>
+
+</html>
+
+<!-- <script>
+    $(document).ready(function(){
+        // load 112fall csv
+        $('#112fall').click(function(){
+            $.ajax({
+                type: 'GET',
+                url: './data112fall.csv',
+                dataType: 'text',
+                success:function(data)
+                {
+                    var data112fall_data = data.split('\n');
+                    var table_data = $('<table>'); // start table tag
+                    for (var count = 0; count < data112fall_data.length; count++)
+                    {
+                        var cell_data = data112fall_data[count].split(",");
+                        table_data.append($('<tr>')); // row tag start
+                        for (var cell_count = 0; cell_count < cell_data.length; cell_count++)
+                        {
+                            if (count === 0) // if first row
+                            {
+                                // table header tag
+                                table_data.append($('<th>' + cell_data[cell_count] + '</th>'));
+                            }
+                            else
+                            {
+                                // table data tag
+                                table_data.append($('<td>' + cell_data[cell_count] + '</td>'));
+                            }
+                        }
+                        table_data.append($('</tr>')); // row tag end
+                    }
+                    table_data.append($('</table'));
+                    $('#semester_table').html(table_data);
+                }
+            });
+        });
+    });
+</script> -->

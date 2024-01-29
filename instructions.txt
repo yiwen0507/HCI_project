@@ -1,0 +1,5 @@
+How to run:
+run these lines on the console:
+npm init -y
+npm install express
+node server.js
